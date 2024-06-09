@@ -5,6 +5,7 @@ import scheduleIcon from '../../assets/images/schedule-icon.png';
 import patientIcon from '../../assets/images/patient-profile.png';
 import scheduleIcon2 from '../../assets/images/schedule-icon-8.png';
 import chatIcon from '../../assets/images/images-removebg-preview.png';
+import medicalIcon from '../../assets/images/medical-search.png';  
 import style from './Home.module.css'
 import { Link } from 'react-router-dom';
 import { ref, set, child } from "firebase/database";
@@ -82,15 +83,21 @@ export default function Home() {
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </Link> : <div></div>}
 
-        {user ? <Link className={style.card} to="/profile">
-          <img src={patientIcon} alt="schedule icon" />
-          <p className={style.card_text}>Profile</p>
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-        </Link> : <div></div>}
-
         {user ? <Link className={style.card} to="/chat">
           <img src={chatIcon} alt="schedule icon" />
           <p className={style.card_text}>Chat</p>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </Link> : <div></div>}
+
+        {user ? <Link className={style.card} to="/medical">
+          <img src={medicalIcon} alt="schedule icon" />
+          <p className={style.card_text}>Medical</p>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </Link> : <div></div>}
+
+        {user ? <Link className={style.card} to="/profile">
+          <img src={patientIcon} alt="schedule icon" />
+          <p className={style.card_text}>Profile</p>
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </Link> : <div></div>}
       </div>
